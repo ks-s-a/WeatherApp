@@ -7,7 +7,6 @@ http
         getWeather(function(err, data){
             if (err) throw err;
             res.write(data);
-
         });
     })
     .listen(2345);
