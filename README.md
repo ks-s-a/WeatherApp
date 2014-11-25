@@ -1,1 +1,1 @@
-This is a small site, wich allow to compare different sources of weather data.
+This is a small site, which allow to compare different sources of weather data.
