@@ -1,1 +1,1 @@
-This is a readme file.
+This is a small site, wich allow to compare different sources of weather data.
