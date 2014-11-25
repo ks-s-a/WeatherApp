@@ -1,0 +1,15 @@
+{
+  "name": "ProfiProject",
+  "version": "0.0.1",
+  "description": "New project only for profi company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL v.3",
+  "dependencies": {
+    "async": "^0.9.0",
+    "step": "0.0.5"
+  }
+}

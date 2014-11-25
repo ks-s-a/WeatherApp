@@ -1,4 +1,1 @@
-WeatherApp
-==========
-
-WeatherApp
+This is a readme file.
