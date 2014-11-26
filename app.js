@@ -1,12 +1,17 @@
 var http = require('http');
 var getWeather = require('./lib/getWeather');
-console.log('Start my app!');
+var app = require('express')();
 
-http
-    .createServer(function(req, res){
-        getWeather(function(err, data){
-            if (err) throw err;
-            res.write(data);
-        });
-    })
-    .listen(2345);
+app.get('/', function(req, res) {
+    getWeather(function(err, data){
+        if (err) throw err;
+        res.write(data);
+    });
+});
+
+var server = app.listen(2345, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Start my app at http://%s:%s', host, port);
+});
