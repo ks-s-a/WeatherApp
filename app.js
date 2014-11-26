@@ -1,14 +1,17 @@
-var http = require('http');
-var getWeather = require('./lib/getWeather');
+var Step = require('step');
+var packageData = require('./lib/packageData/packageData.js');
 var app = require('express')();
 
 app.get('/', function(req, res) {
-    /*getWeather(function(err, data){
-        if (err) throw err;
-        res.write(data);
-    });*/
-
-    res.render('layout.jade', {appName: 'WeatherApp'});
+    Step(
+        function(){
+            packageData(this);
+        },
+        function (err, data) {
+            if (err) throw err;
+            res.render('layout.jade', {appName: 'WeatherApp', data: data});
+        }
+    );
 });
 
 var server = app.listen(2345, function() {
