@@ -3,10 +3,12 @@ var getWeather = require('./lib/getWeather');
 var app = require('express')();
 
 app.get('/', function(req, res) {
-    getWeather(function(err, data){
+    /*getWeather(function(err, data){
         if (err) throw err;
         res.write(data);
-    });
+    });*/
+
+    res.render('layout.jade', {appName: 'WeatherApp'});
 });
 
 var server = app.listen(2345, function() {
