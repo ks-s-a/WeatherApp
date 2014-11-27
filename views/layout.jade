@@ -7,11 +7,6 @@ body
     h1 Live starts here!
     p Hello world!
 
-  #app-name.container
-    h1 This is the
-    p= appName + '.'
+  block appInfo
 
-  #weather-data.container
-    p There will be weather data.
-
-  include ./include
+  block weatherData

@@ -1,0 +1,16 @@
+extends ./layout
+
+block appInfo
+  #app-name.container
+    h1 This is the
+    p= appName + '.'
+  #weather-data.container
+    p There will be weather data.
+
+block weatherData
+  each val in data
+    .container
+      h1 This is test data:
+      p= 'Temperature is: ' + val.temp
+      p= 'State is: ' + val.state
+
