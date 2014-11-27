@@ -1,6 +1,7 @@
 var Step = require('step');
 var packageData = require('./lib/packageData/packageData.js');
-var app = require('express')();
+var express = require('express');
+var app = express();
 var winston = require('winston');
 
 app.get('/', function(req, res) {
@@ -25,8 +26,14 @@ app.get('/', function(req, res) {
             winston.info('Connection closed successfully!');
         }
     );
+});
 
+app.use(express.static(__dirname + '/public'));
 
+app.use(function(req, res){
+    winston.info('Client wants nonexistent page.');
+
+    res.status(404).send('Lets try in another time...');
 });
 
 var server = app.listen(2345, function() {
