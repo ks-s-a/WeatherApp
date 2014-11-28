@@ -5,11 +5,13 @@ var app = express();
 var winston = require('winston');
 
 app.get('/', function(req, res) {
+    var cityName = req.query.city || 'London';
+
     Step(
         function(){
             winston.info('Connection established!');
 
-            packageData('London', this);
+            packageData(cityName, this);
         },
         function (err, data) {
             if (err) throw err;
